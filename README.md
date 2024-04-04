@@ -71,3 +71,5 @@ npm test
 The extension itself needs no build step or package install; it uses the browser's built-in extension APIs and local JavaScript files.
 
 <!-- [2024-04-04] feat: initialize Chromium Manifest V3 extension structure -->
+
+<!-- [2024-04-04] feat: implement declarativeNetRequest block rules for ad domains -->
