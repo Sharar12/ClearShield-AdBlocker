@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClearShield</title>
+  <link rel="stylesheet" href="styles/popup.css">
+  <script src="src/popup.js" defer></script>
+</head>
+<body>
+  <main class="popup-shell">
+    <header class="brand-row">
+      <img src="assets/icon48.png" alt="" width="38" height="38">
+      <div class="brand-copy"><strong>ClearShield</strong><span>Ad & tracker protection</span></div>
+      <span id="statusDot" class="status-dot" aria-label="Protection status"></span>
+    </header>
+
+    <section class="hero-panel">
+      <div class="hero-icon"><span id="shieldGlyph">✓</span></div>
+      <div class="hero-copy">
+        <strong id="globalStatus">Protection is on</strong>
+        <p id="globalDescription">Blocking ads and common trackers.</p>
+      </div>
+      <button id="globalToggle" class="switch" type="button" role="switch" aria-checked="true" aria-label="Toggle protection"><span></span></button>
+    </section>
+
+    <section class="site-panel">
+      <div class="section-eyebrow">CURRENT WEBSITE</div>
+      <div class="site-row">
+        <div class="site-mark">◎</div>
+        <div class="site-copy"><strong id="siteHost">Checking page…</strong><span id="siteStatus">Protection enabled on this site</span></div>
+      </div>
+      <button id="siteToggle" class="secondary-button" type="button">Pause on this site</button>
+      <p id="siteMessage" class="inline-message" aria-live="polite"></p>
+    </section>
+
+    <section class="stats-row" aria-label="Filter status">
+      <div class="stat"><strong id="networkCount">—</strong><span>Network rules</span></div>
+      <div class="stat"><strong id="cosmeticCount">—</strong><span>Cosmetic rules</span></div>
+      <div class="stat"><strong id="listCount">—</strong><span>Active lists</span></div>
+    </section>
+
+    <footer class="popup-footer">
+      <span class="privacy-note"><span class="privacy-dot"></span> Private by design · No telemetry</span>
+      <button id="openSettings" class="settings-link" type="button">Settings <span aria-hidden="true">↗</span></button>
+    </footer>
+    <p id="errorText" class="error-text" hidden></p>
+  </main>
+</body>
+</html>

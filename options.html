@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClearShield Settings</title>
+  <link rel="stylesheet" href="styles/options.css">
+  <script src="src/options.js" defer></script>
+</head>
+<body>
+  <div class="app-frame">
+    <aside class="sidebar">
+      <div class="brand"><img src="assets/icon48.png" alt="" width="38" height="38"><div><strong>ClearShield</strong><span>AD & TRACKER CONTROL</span></div></div>
+      <div class="side-section-label">WORKSPACE</div>
+      <a class="nav-item active" href="#overview"><span class="nav-icon">◈</span> Overview</a>
+      <a class="nav-item" href="#filters"><span class="nav-icon">≋</span> Filter lists</a>
+      <a class="nav-item" href="#custom"><span class="nav-icon">⌘</span> My rules</a>
+      <a class="nav-item" href="#allowlist"><span class="nav-icon">◇</span> Allowlist</a>
+      <div class="sidebar-bottom"><div class="privacy-seal">✓</div><strong>Privacy stays local</strong><p>No analytics, accounts, or browsing-history uploads.</p><span class="version-label">CLEARSHIELD · v0.1.0</span></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div><div class="breadcrumb">CLEARSHIELD <span>/</span> SETTINGS</div><h1>Protection settings</h1><p>Shape how ClearShield filters ads, trackers, and page clutter.</p></div><div class="top-status"><span id="topStatusDot"></span><span id="topStatus">Protection active</span></div></header>
+
+      <section id="overview" class="overview-grid">
+        <article class="overview-card overview-main">
+          <div class="card-topline"><span class="eyebrow">PROTECTION ENGINE</span><span class="live-chip"><i></i> LOCAL FILTERING</span></div>
+          <h2 id="overviewStatus">Your browser, less noisy.</h2>
+          <p id="overviewDescription">ClearShield blocks requests matched by your enabled filter lists and hides supported ad elements directly on the page.</p>
+          <div class="overview-metrics">
+            <div><strong id="overviewNetwork">—</strong><span>Network rules</span></div>
+            <div><strong id="overviewCosmetic">—</strong><span>Cosmetic selectors</span></div>
+            <div><strong id="overviewLists">—</strong><span>Enabled lists</span></div>
+          </div>
+        </article>
+        <article class="update-card">
+          <div class="update-icon">↻</div><span class="eyebrow">FILTER MAINTENANCE</span><h3>Stay up to date</h3>
+          <p>Refresh your enabled lists to pull in recent blocking rules.</p>
+          <button id="updateButton" class="button primary" type="button">Update filter lists <span>→</span></button>
+          <div id="lastUpdated" class="last-updated">Last update: not yet updated</div>
+        </article>
+      </section>
+
+      <section id="filters" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">01 / FILTER SOURCES</span><h2>Filter lists</h2><p>Choose the sources ClearShield downloads and converts into local rules.</p></div><button id="saveListsButton" class="button secondary" type="button">Save & update</button></div>
+        <div id="filterListContainer" class="filter-list-container"><div class="loading-line">Loading filter lists…</div></div>
+        <div class="info-note"><span>i</span><p>Lists are downloaded only when you update them and refreshed automatically about once per day. Rules run locally in your browser; filtering is not sent to a remote service.</p></div>
+      </section>
+
+      <section id="custom" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">02 / ADVANCED CONTROL</span><h2>My rules</h2><p>Add custom network filters or CSS cosmetic rules in a compatible, commonly used syntax.</p></div><span class="soft-badge">OPTIONAL</span></div>
+        <div class="editor-card">
+          <div class="editor-top"><div class="editor-title"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><strong>custom-filters.txt</strong></div><span>LOCAL CONFIG</span></div>
+          <textarea id="customFilters" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="||ads.example.com^\n@@||trusted.example.com^\nexample.com##.sponsored-card"></textarea>
+          <div class="editor-bottom"><div><strong>Examples</strong><span> ||ads.example.com^ · @@||allow.example^ · example.com##.ad</span></div><button id="saveCustomButton" class="button primary" type="button">Save my rules <span>→</span></button></div>
+        </div>
+        <p class="small-note">This parser supports common domain, resource-type, first/third-party, allow, and cosmetic rules. Advanced procedural filters and redirect-based rules are intentionally skipped.</p>
+      </section>
+
+      <section id="allowlist" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">03 / SITE EXCEPTIONS</span><h2>Allowlist</h2><p>Sites here bypass network and cosmetic filtering. Manage exceptions from the extension popup.</p></div><button id="clearAllowlistButton" class="button danger-outline" type="button">Clear all</button></div>
+        <div class="allowlist-card"><div class="allowlist-icon">◇</div><div class="allowlist-copy"><strong id="allowlistCount">No site exceptions</strong><p id="allowlistSummary">Use “Pause on this site” in the popup to add a trusted website.</p><div id="allowlistChips" class="allowlist-chips"></div></div></div>
+      </section>
+
+      <footer class="page-footer"><span>ClearShield protects locally. No account. No telemetry.</span><span><a href="README.md" target="_blank" rel="noreferrer">About this project</a> · Built for Chromium MV3</span></footer>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+</body>
+</html>
