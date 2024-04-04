@@ -73,3 +73,5 @@ The extension itself needs no build step or package install; it uses the browser
 <!-- [2024-04-04] feat: initialize Chromium Manifest V3 extension structure -->
 
 <!-- [2024-04-04] feat: implement declarativeNetRequest block rules for ad domains -->
+
+<!-- [2024-04-04] feat: build extension popup UI with toggle switch and blocked count -->
